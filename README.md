@@ -31,6 +31,8 @@ redis 역할 및 구성
 ==================
 > redis 는 기본적으로 Master, Slave(Replica), Sentinel 로 역할이 나누어져있으며, 세개의 역할을 상황에 맞게 구성하여 사용 
 1. Master-Slave(Replica)
+![image](https://user-images.githubusercontent.com/108176836/223335455-7761befa-1704-47b5-b109-2e84df2752cf.png)
+
    * Master는 기본적으로 모든 명령에 대해 실시간으로데이터를 처리하며(Read/Write), Slave(Replica)는 Master를 바라보며 실시간으로 마스터에서 처리한 데이터를 복제
    * Slave(Replica)에 사용자는 읽기 권한만 존재(오로지 Master 에 의해서만 데이터가 쓰여짐)
    * Master-Slave(Replica) 구조는 Master 한대에 Slave(Replica)를 다수 구성
@@ -45,6 +47,6 @@ redis 역할 및 구성
    * Cluster란 여러 대의 서버를 하나로 묶어서 1개의 시스템처럼 동작하게 하는 것
    * 빅데이터를 처리하는 곳이 많아지는 만큼 성능 지연에 대한 문제를 해결하기위해 서버의 자원을 업그레이드하는 Scale-up 방식, 별도의 서버를 추가하는 Scale-out 방식을 사용하나 Scale-up 방식은 조건이 제한적일수 있으므로 Scale-out 방식을 주로 사용하는데, Scale-out 방식을 사용하여 여러 대의 서버를 사용할 경우 여러 대의 서버에 데이터를 분산하여 처리하게 하도록 해주어야함
    * redis 안그래도 싱글 쓰레드여서 key 가 많아 질수록 서비스에 성능에 문제를 야기 할 수 있기에, 이와 같은 문제를 해결하기 위해 데이터를 물리적으로 여러 파티션에 나누어 저장할 수있는 수평적 파티셔닝(Horizontal Partitioning) 또는 샤딩(Sharding) 이라고 불리는 기능을 제공
-   * 이와 같이 데이터 분산 처리를 위한 샤딩과 안정성 확보를 위한 복제 시스템을 함께 사용하는 것을 Redis 클러스터(Shared-Replication) 라고 
+   * 이와 같이 데이터 분산 처리를 위한 샤딩과 안정성 확보를 위한 복제 시스템을 함께 사용하는 것을 Redis 클러스터(Shared-Replication) 라고 함
 
 
