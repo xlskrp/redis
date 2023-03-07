@@ -41,7 +41,9 @@ redis 역할 및 구성
    * 기존의 Master-Slave(Replica) 구조에서 Sentinel 이라는 역할을 추가함으로 이를 보완
    * Sentinel 은 지속적으로 Master와 Slave(Replica) 모니터링하며 Master 에 장애가 발생하였을 경우, Slave(Replica)를 Master로 자동 승격시켜주는 FailOver 역할을 담당
    * Sentinel 은 최소 한대가 필요하지만 주로 3대를 권장하며, 홀수개를 구성해야함
-3. cluster
+3. Cluster
+   * Cluster란 여러 대의 서버를 하나로 묶어서 1개의 시스템처럼 동작하게 하는 것
+   * 빅데이터를 처리하는 곳이 많아지는 만큼 성능 지연에 대한 문제를 해결하기위해 서버의 자원을 업그레이드하는 Scale-up 방식, 별도의 서버를 추가하는 Scale-out 방식을 사용하나 Scale-up 방식은 조건이 제한적일수 있으므로 Scale-out 방식을 주로 사용하는데, Scale-out 방식을 사용하여 여러 대의 서버를 사용할 경우 여러 대의 서버에 데이터를 분산하여 처리하게 하도록 해주어야함
    * 
 
 
