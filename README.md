@@ -34,7 +34,7 @@ redis 역할 및 구성
      
 <img src="https://user-images.githubusercontent.com/108176836/223335455-7761befa-1704-47b5-b109-2e84df2752cf.png" width="250px" height="350px"></img><br/>
 
-   * Master는 기본적으로 모든 명령에 대해 실시간으로데이터를 처리하며(Read/Write), Slave(Replica)는 Master를 바라보며 실시간으로 마스터에서 처리한 데이터를 복제
+   * Master는 기본적으로 모든 명령에 대해 실시간으로 데이터를 처리하며(Read/Write), Slave(Replica)는 Master를 바라보며 실시간으로 마스터에서 처리한 데이터를 복제
    * Slave(Replica)에 사용자는 읽기 권한만 존재(오로지 Master 에 의해서만 데이터가 쓰여짐)
    * Master-Slave(Replica) 구조는 Master 한대에 Slave(Replica)를 다수 구성
    * 그러나 Master 에 장애가 발생하였을 경우, FailOver 되어 Slave(Replica) 가 Master 로 승격되는 것은 아니며 수동으로 승격을 시켜주어야함
