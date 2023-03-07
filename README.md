@@ -30,7 +30,7 @@ redis 의 영속성
 redis 역할 및 구성
 ==================
 > redis 는 기본적으로 Master, Slave(Replica), Sentinel 로 역할이 나누어져있으며, 세개의 역할을 상황에 맞게 구성하여 사용 
-1. Master-Slave(Replica)    
+## 1. Master-Slave(Replica)    
      
 <img src="https://user-images.githubusercontent.com/108176836/223335455-7761befa-1704-47b5-b109-2e84df2752cf.png" width="250px" height="350px"></img><br/>
 
@@ -39,7 +39,7 @@ redis 역할 및 구성
    * Master-Slave(Replica) 구조는 Master 한대에 Slave(Replica)를 다수 구성
    * 그러나 Master 에 장애가 발생하였을 경우, FailOver 되어 Slave(Replica) 가 Master 로 승격되는 것은 아니며 수동으로 승격을 시켜주어야함
    * 즉, Master가 장애가 나면 데이터에 대해 쓰기가 불가능하므로 서비스가 중단됨(물론, 슬레이브는 살아있으니 장애 전 데이터에 대해서는 읽기는 가능) 
-2. Master-Slave(Replica)-Sentinel
+## 2. Master-Slave(Replica)-Sentinel
 
 <img src="https://user-images.githubusercontent.com/108176836/223337472-48f0aa37-a71d-49f5-a1c4-fd6d86be9619.png" width="400px" height="350px"></img><br/>
 
@@ -47,7 +47,7 @@ redis 역할 및 구성
    * 기존의 Master-Slave(Replica) 구조에서 Sentinel 이라는 역할을 추가함으로 이를 보완
    * Sentinel 은 지속적으로 Master와 Slave(Replica) 모니터링하며 Master 에 장애가 발생하였을 경우, Slave(Replica)를 Master로 자동 승격시켜주는 FailOver 역할을 담당
    * Sentinel 은 최소 한대가 필요하지만 주로 3대를 권장하며, 홀수개를 구성해야함
-3. Cluster
+## 3. Cluster
 
 <img src="https://user-images.githubusercontent.com/108176836/223338032-fa7a5222-724e-4988-b60c-3f25e24ad250.png" width="500px" height="350px"></img><br/>
 
@@ -56,6 +56,6 @@ redis 역할 및 구성
    * redis 안그래도 싱글 쓰레드여서 key 가 많아 질수록 서비스에 성능에 문제를 야기 할 수 있기에, 이와 같은 문제를 해결하기 위해 데이터를 물리적으로 여러 파티션에 나누어 저장할 수있는 수평적 파티셔닝(Horizontal Partitioning) 또는 샤딩(Sharding) 이라고 불리는 기능을 제공
    * 이와 같이 데이터 분산 처리를 위한 샤딩과 안정성 확보를 위한 복제 시스템을 함께 사용하는 것을 Redis 클러스터(Shared-Replication) 라고 함
    * 기본적으로 Master, Slave 서버만으로 구성되며 Sentinel 서버는 필요 X (Sentinel이 없어도 FailOver 가능)
-   * 기본적으로 16,384개의 슬롯을 가지며 3대의 Redis 서버가 구축되어 있는 환경에서 첫 번째 서버에는 0~5460, 두 번째 서버에는 5461~10922, 세번째는 10923~16384 슬롯 정보가 분산되도록 사용
+   * 기본적으로 16384개의 슬롯을 가지며 3대의 Redis 서버가 구축되어 있는 환경에서 첫 번째 서버에는 0-5460, 두 번째 서버에는 5461-10922, 세번째는 10923-16384 슬롯 정보가 분산되도록 사용
 
 
