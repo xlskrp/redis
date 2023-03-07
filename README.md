@@ -27,11 +27,18 @@ redis 의 영속성
 
 
 redis 역할 및 구성
+==================
 > redis 는 기본적으로 Master, Slave(Replica), Sentinel 로 역할이 나누어져있으며, 세개의 역할을 상황에 맞게 구성하여 사용 
-1. Master
-   기본적으로 모든 명령을 처리하며(Read/Write), 
-2. Slave(Replica)
+1. Master-Slave(Replica)
+   * Master는 기본적으로 모든 명령에 대해 실시간으로데이터를 처리하며(Read/Write), Slave(Replica)는 Master를 바라보며 실시간으로 마스터에서 처리한 데이터를 복제
+   * Slave(Replica)에 사용자는 읽기 권한만 존재(오로지 Master 에 의해서만 데이터가 쓰여짐)
+   * Master-Slave(Replica) 구조는 가장 일반적으로 사용됨
+   * 그러나 Master 에 장애가 발생하였을 경우, FailOver 되어 Slave(Replica) 가 Master 로 승격되는 것은 아니며 수동으로 승격을 시켜주어야함
+   * 즉, Master가 장애가 나면 데이터에 대해 쓰기가 불가능하므로 서비스가 중단됨(물론, 슬레이브는 살아있으니 장애 전 데이터에 대해서는 읽기는 가능) 
+2. Master-Slave(Replica)-Sentinel
+   * Master-Slave(Replica) 구조를 보완하기 위해 만들어짐
+   * 기존의 Master-Slave(Replica) 구조에서 Sentinel 이라는 역할을 추가함으로 이를 보완
+   * Sentinel 은 지속적으로 Master와 Slave(Replica) 모니터링하며 Master 에 장애가 발생하였을 경우, Slave(Replica)를 Master로 자동 승격시켜주는 FailOver 역할을 담당
 
-3. Sentinel
 
 
