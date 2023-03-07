@@ -32,7 +32,7 @@ redis 역할 및 구성
 > redis 는 기본적으로 Master, Slave(Replica), Sentinel 로 역할이 나누어져있으며, 세개의 역할을 상황에 맞게 구성하여 사용 
 ## 1. Master-Slave(Replica)    
      
-<img src="https://user-images.githubusercontent.com/108176836/223335455-7761befa-1704-47b5-b109-2e84df2752cf.png" width="250px" height="350px"></img><br/>
+<img src="https://user-images.githubusercontent.com/108176836/223335455-7761befa-1704-47b5-b109-2e84df2752cf.png" width="200px" height="350px"></img><br/>
 
    * Master는 기본적으로 모든 명령에 대해 실시간으로 데이터를 처리하며(Read/Write), Slave(Replica)는 Master를 바라보며 실시간으로 마스터에서 처리한 데이터를 복제
    * Slave(Replica)에 사용자는 읽기 권한만 존재(오로지 Master 에 의해서만 데이터가 쓰여짐)
