@@ -17,3 +17,9 @@ redis 의 특징
 * 쓰기 성능 지원을 위한 샤딩 지원(Sharding, 데이터 세트 분할 분산 저장)   
 
 
+redis 의 영속성
+===============
+* RDB(Snapshotting) 방식
+순간적으로 메모리에 있는 내용을 DISK에 전체를 옮겨 담는 방식
+* AOF (Append On File) 방식
+Redis의 모든 write/update 연산 자체를 모두 log 파일에 기록하는 형태
