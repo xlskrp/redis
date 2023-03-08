@@ -1,4 +1,4 @@
-# ✏️ redis study
+# ✏️ redis study(1) - redis 란?
 
 redis 란?
 =========
