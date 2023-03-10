@@ -64,4 +64,8 @@ redis 역할 및 구성
 참고
 ====
    * https://devlog-wjdrbs96.tistory.com/374
-   * 
+   * https://wildeveloperetrain.tistory.com/21
+   * https://steady-coding.tistory.com/586
+   * https://dataonair.or.kr/db-tech-reference/d-guide/data-practical/?mod=document&uid=393
+   * https://cla9.tistory.com/102
+   * https://velog.io/@limsubin/Redis%EB%A5%BC-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90
