@@ -70,3 +70,7 @@ redis 역할 및 구성
    * https://cla9.tistory.com/102
    * https://velog.io/@limsubin/Redis%EB%A5%BC-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90
    * https://redis.io/
+   * https://backtony.github.io/redis/2021-09-03-redis-3/
+   * https://server-talk.tistory.com/502
+   
+   
