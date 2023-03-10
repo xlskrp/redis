@@ -72,5 +72,5 @@ redis 역할 및 구성
    * https://redis.io/
    * https://backtony.github.io/redis/2021-09-03-redis-3/
    * https://server-talk.tistory.com/502
-   
+   * https://cjwoov.tistory.com/46
    
